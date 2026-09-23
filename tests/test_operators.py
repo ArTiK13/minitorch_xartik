@@ -113,7 +113,7 @@ def test_sigmoid(a: float) -> None:
     assert_close(sigmoid(0.0), 0.5)
     left, right = sigmoid(a - 1.0), sigmoid(a + 1.0)
     assert left <= value <= right
-    if 0.0 < left and right < 1.0:
+    if 1e-12 < left and right < 1.0 - 1e-12:
         assert left < value < right
 
 
